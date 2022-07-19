@@ -1,0 +1,4 @@
+roles:
+  - src: geerlingguy.docker
+collections:
+- name: community.crypto
