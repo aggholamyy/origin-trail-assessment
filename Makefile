@@ -18,14 +18,14 @@ create-certificate:
 	done;
 
 scp-cers-confs-to-nodes:
-	filenames=(node1.origintrail.com node2.origintrail.com 1 node3.origintrail.com node4.origintrail.com node5.origintrail.com); \
+	filenames=(node1.origintrail.com node2.origintrail.com node3.origintrail.com node4.origintrail.com node5.origintrail.com); \
 	j=0; \
-    for i in `grep  "host" ansible/inventory.ini|cut -d "=" -f2`; do \
+    for i in `grep  "host" ansible/inventory.ini | cut -d "=" -f2`; do \
 		echo $$i; \
 		ssh root@$$i 'mkdir certs; touch .origintrail_noderc'; \
 		scp certs_keys/$${filenames[$$j]}.* root@$$i:certs; \
-		scp origintrail_noderc_conf/origintrail_noderc_node1 root@$$i:.origintrail_noderc; \
-		j=$((j + 1)); \
+		scp origintrail_noderc_conf/origintrail_noderc_node$$(($$j + 1)) root@$$i:.origintrail_noderc; \
+		j=$$(($$j + 1)); \
 	done;
 
 run-nodes:
