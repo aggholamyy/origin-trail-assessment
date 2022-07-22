@@ -1,4 +1,4 @@
-# Prepare VMs on Digitalocean 
+# Prepare OriginTrail nodes on Digitalocean 
 
 1. Install ansible requirements
    ```bash
