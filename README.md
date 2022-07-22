@@ -37,6 +37,6 @@
 # Further work around
    ```txt
    1. preparing monitoring for nodes.
-   2. writing exporter for node to check health of the node and 3 compare its’ status by other nodes in the cluster and outside nodes.
-   3.  creating dynamic inventory for ansible. 
+   2. writing exporter for node to check health of the node and compare its’ status by other nodes in the cluster and outside nodes.
+   3. creating dynamic inventory for ansible. 
    ```
